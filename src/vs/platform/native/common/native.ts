@@ -226,9 +226,9 @@ export interface ICommonNativeHostService {
 	loadCertificates(): Promise<string[]>;
 	isPortFree(port: number): Promise<boolean>;
 	findFreePort(startPort: number, giveUpAfter: number, timeout: number, stride?: number): Promise<number>;
-
 	// Registry (Windows only)
 	windowsGetStringRegKey(hive: 'HKEY_CURRENT_USER' | 'HKEY_LOCAL_MACHINE' | 'HKEY_CLASSES_ROOT' | 'HKEY_USERS' | 'HKEY_CURRENT_CONFIG', path: string, name: string): Promise<string | undefined>;
+	openSisuNetworkWindow(windowId: number | undefined, url?: string): Promise<string>;
 }
 
 export const INativeHostService = createDecorator<INativeHostService>('nativeHostService');

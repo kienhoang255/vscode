@@ -424,4 +424,6 @@ import './contrib/editTelemetry/browser/editTelemetry.contribution.js';
 // Opener
 import './contrib/opener/browser/opener.contribution.js';
 
+import './contrib/sisuNetwork/browser/sisuNetwork.contribution.js';
+import './contrib/sisuNetwork/browser/sisuNetworkPane.js';
 //#endregion

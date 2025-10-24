@@ -1153,4 +1153,22 @@ export class NativeHostMainService extends Disposable implements INativeHostMain
 
 		return this.auxiliaryWindowsMainService.getWindowByWebContents(contents);
 	}
+
+	async openSisuNetworkWindow(firstArg: number | undefined, windowId: number | undefined, url: string = 'https://vnexpress.net/'): Promise<string> {
+		const parentWindow = this.codeWindowById(windowId);
+		if (!parentWindow) {
+			throw new Error('Parent window not found');
+		}
+		const win = new BrowserWindow();
+
+		try {
+			await win.loadURL(url);
+
+			const htmlContent = await win.webContents.executeJavaScript('document.documentElement.outerHTML');
+			return htmlContent;
+
+		} finally {
+			win.destroy();
+		}
+	}
 }
