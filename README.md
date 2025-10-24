@@ -22,11 +22,11 @@ Trước khi chạy dự án, cần đảm bảo đã cài đặt:
    ```bash
    npm install
    ```
-2. Cài đặt các gói cần thiết:
+2. Theo dõi build:
    ```bash
    npm run watch
    ```
-3. Chạy vscode
+3. Chạy vscode(bản CODE-OSS)
    ```bash
    .\scripts\code.bat
    ```
